@@ -12,11 +12,11 @@ import lombok.Data;
 public class Siswa{
 
     @Id
-    @GeneratedValue
-    @Column(name= "NOMOR_INDUK")
+    @Column(name= "NOMOR_INDUK", nullable = false)
     private Long id;
-
+    @Column(name = "NAMA", nullable = false)
     private String nama;
+    @Column(name ="KELAS", nullable = false)
     private String kelas;
 
     public Siswa(){}

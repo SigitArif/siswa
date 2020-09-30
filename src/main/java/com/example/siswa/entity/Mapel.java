@@ -12,9 +12,10 @@ import lombok.Data;
 public class Mapel {
     @Id
     @GeneratedValue
-    @Column(name = "ID_MAPEL")
+    @Column(name = "ID_MAPEL", nullable = false)
     private Long id;
 
+    @Column(name = "NAMA",nullable = false)
     private String nama;
 
     public Mapel(){}

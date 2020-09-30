@@ -15,18 +15,19 @@ import lombok.Data;
 public class Nilai {
     @Id
     @GeneratedValue
-    @Column(name = "ID_NILAI")
+    @Column(name = "ID_NILAI", nullable = false)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name ="NOMOR_INDUK_SISWA")
+    @JoinColumn(name ="NOMOR_INDUK_SISWA", nullable = false)
     private Siswa siswa;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ID_MAPEL")
+    @JoinColumn(name = "ID_MAPEL", nullable = false)
     private Mapel mapel;
 
+    @Column(name = "NILAI", nullable = false)
     private Integer nilai;
 
     public Nilai(){}
