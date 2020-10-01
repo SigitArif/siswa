@@ -17,4 +17,9 @@ public class ConvertCSVtoModelTest {
         
     assertNotNull(converter.convertSiswaFiletoSiswaVO());
     }
+
+    @Test
+    public void convertNilaiTest(){
+    assertNotNull(converter.convertNilaiFiletoNilaiVO());
+    }
 }
