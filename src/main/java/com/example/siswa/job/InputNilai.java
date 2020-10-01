@@ -3,6 +3,7 @@ package com.example.siswa.job;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.siswa.converter.ConvertCSVtoModel;
 import com.example.siswa.entity.Mapel;
 import com.example.siswa.entity.Nilai;
 import com.example.siswa.entity.Siswa;
@@ -26,6 +27,9 @@ public class InputNilai {
 
     @Autowired
     NilaiRepository nilaiRepository;
+
+    @Autowired
+    ConvertCSVtoModel converter;
 
     public void persist(List<NilaiVO> vos){
         vos.stream().forEach( nilai->{
@@ -56,6 +60,6 @@ public class InputNilai {
     }
 
     public void loadData(){
-        
+        persist(converter.convertNilaiFiletoNilaiVO());            
     }
 }

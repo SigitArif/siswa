@@ -41,5 +41,12 @@ public void persistTest(){
     List<Mapel> mapelList = mapelRepository.findAll();
     assertTrue(models.size()>0 &&mapelList.size()>0);
 }
+@Test
+public void loadDataTest(){
+    inputNilai.loadData();
+    List<Nilai> models = nilaiRepository.findAll();
+    List<Mapel> mapelList = mapelRepository.findAll();
+    assertTrue(models.size()>0 &&mapelList.size()>0);
+}
     
 }
