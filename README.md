@@ -11,28 +11,30 @@
 # APIs
 
 1. Get List Nilai
-   HTTP Method: POST
-   url: localhost:8080/siswa-service/api/v1/nilai/list
-   request_body: {
+   - HTTP Method: POST
+   - url: localhost:8080/siswa-service/api/v1/nilai/list
+   - request_body: {
     "no_induk": "1", 
     "nama" : "Deni"
     "mata_pelajaran" : "agama", 
     "nilai" : "60"
    }
-   semua input dalam string apabila tidak ingin melakukan filter maka kirimkan request JSON kosong {}. Filter baru bisa dalam exact value belum bisa >/ <
+   - semua input dalam string apabila tidak ingin melakukan filter maka kirimkan request JSON kosong {}. 
+   - Filter baru bisa dalam exact value belum bisa >/ <
 
 2. Update Nilai
-    HTTP Method: UPDATE \n
-    url: localhost:8080/siswa-service/api/v1/nilai/update \n
-    request_body: { \n
+   - HTTP Method: UPDATE 
+   - url: localhost:8080/siswa-service/api/v1/nilai/update 
+   - request_body: { 
      "no_induk": "1", 
     "nama" : "Deni"
     "mata_pelajaran" : "agama", 
     "nilai" : "80"   
     }
-    Semua input harus dalam String. nama dan no_induk harus sesuai, belum ditambahkan validasi pengecekan.
+   - Semua input harus dalam String. nama dan no_induk harus sesuai, belum ditambahkan validasi pengecekan.
 
 3. Delete Mapel
-    HTTP Method: DELETE
-    url: localhost:8080/siswa-service/api/v1/nilai/mapel/delete?mapel=agama
-    value mapel yang ingin dihapus dimasukkan dalam param 'mapel'. Harus sesuai penamaan/besar kecilnya. 
+   - HTTP Method: DELETE
+   - url: localhost:8080/siswa-service/api/v1/nilai/mapel/delete?mapel=agama
+   - value mapel yang ingin dihapus dimasukkan dalam param 'mapel'. 
+   - Harus sesuai penamaan/besar kecilnya. 
