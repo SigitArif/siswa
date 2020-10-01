@@ -15,7 +15,7 @@
    - url: localhost:8080/siswa-service/api/v1/nilai/list
    - request_body: {
     "no_induk": "1", 
-    "nama" : "Deni"
+    "nama" : "Deni",
     "mata_pelajaran" : "agama", 
     "nilai" : "60"
    }
@@ -27,7 +27,7 @@
    - url: localhost:8080/siswa-service/api/v1/nilai/update 
    - request_body: { 
      "no_induk": "1", 
-    "nama" : "Deni"
+    "nama" : "Deni",
     "mata_pelajaran" : "agama", 
     "nilai" : "80"   
     }
