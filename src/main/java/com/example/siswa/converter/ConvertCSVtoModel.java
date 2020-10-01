@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.siswa.vo.SiswaVO;
+import com.example.siswa.vo.*;
 
 import org.springframework.stereotype.Component;
 
@@ -49,5 +49,34 @@ public class ConvertCSVtoModel {
         siswaVO.setNama(nama);
         siswaVO.setKelas(kelas);
         return siswaVO;
+    }
+
+    public List<NilaiVO> convertNilaiFiletoNilaiVO(){
+        Path pathToNilaiFile = Paths.get(FILE_PATH + "/nilai.csv");
+        List<NilaiVO> nilaiVOs = new ArrayList<NilaiVO>();
+
+        try(BufferedReader br = Files.newBufferedReader(pathToNilaiFile, 
+                         StandardCharsets.US_ASCII)){
+            String line = br.readLine();
+            System.out.println(line);
+            line = br.readLine();
+            while(line!=null){
+              String[] attributes = line.split(",");
+              nilaiVOs.add(convertAttributeToNilaiVO(attributes));
+              line = br.readLine();
+            }
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        return nilaiVOs;
+    }
+
+    public NilaiVO convertAttributeToNilaiVO(String[] attributes){
+        NilaiVO vo = new NilaiVO();
+        vo.setNoInduk(Long.parseLong(attributes[0]));
+        vo.setMapel(attributes[1]);
+        vo.setNilai(Integer.parseInt(attributes[2]));
+        return vo;
     }
 }
