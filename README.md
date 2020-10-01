@@ -22,9 +22,9 @@
    semua input dalam string apabila tidak ingin melakukan filter maka kirimkan request JSON kosong {}. Filter baru bisa dalam exact value belum bisa >/ <
 
 2. Update Nilai
-    HTTP Method: UPDATE
-    url: localhost:8080/siswa-service/api/v1/nilai/update
-    request_body: {
+    HTTP Method: UPDATE \n
+    url: localhost:8080/siswa-service/api/v1/nilai/update \n
+    request_body: { \n
      "no_induk": "1", 
     "nama" : "Deni"
     "mata_pelajaran" : "agama", 
