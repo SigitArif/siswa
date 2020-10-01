@@ -19,7 +19,7 @@ public class InputService {
     @Autowired
     InputNilai inputNilai;
 
-    @Scheduled(cron = "0 0 13 * * ?")
+    @Scheduled(cron = "${cron.input.schedule: 0 0 13 * * ?}")
     public void inputAllData(){
         inputSiswa.loadData();
         inputNilai.loadData();
