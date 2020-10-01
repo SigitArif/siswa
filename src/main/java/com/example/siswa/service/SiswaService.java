@@ -1,16 +1,15 @@
 package com.example.siswa.service;
 
-import com.example.siswa.repository.MapelRepository;
+import com.example.siswa.repository.SiswaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MapelService {
+public class SiswaService {
     @Autowired
-    MapelRepository mapelRepository;
-
+    SiswaRepository siswaRepository;
     public void clearAllData(){
-        mapelRepository.deleteAll();
+        siswaRepository.deleteAll();
     }
 }
