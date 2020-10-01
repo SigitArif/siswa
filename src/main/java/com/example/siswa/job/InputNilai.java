@@ -54,4 +54,8 @@ public class InputNilai {
 
         return mapel;
     }
+
+    public void loadData(){
+        
+    }
 }

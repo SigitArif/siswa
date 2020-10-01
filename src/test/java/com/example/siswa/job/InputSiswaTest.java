@@ -36,8 +36,13 @@ public class InputSiswaTest {
         input.persist(vos);
         String result = "";
         List<Siswa> models = siswaRepository.findAll();
-        assertTrue(models.size()>0);
+        assertTrue(models.size()>0);        
+    }
 
-        
+    @Test
+    public void loadDataTest(){
+        input.loadData();
+        List<Siswa> models = siswaRepository.findAll();
+        assertTrue(models.size()>0); 
     }
 }
