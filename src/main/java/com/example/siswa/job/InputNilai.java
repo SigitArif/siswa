@@ -1,9 +1,11 @@
 package com.example.siswa.job;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.example.siswa.entity.Mapel;
 import com.example.siswa.entity.Nilai;
+import com.example.siswa.entity.Siswa;
 import com.example.siswa.repository.MapelRepository;
 import com.example.siswa.repository.NilaiRepository;
 import com.example.siswa.repository.SiswaRepository;
@@ -32,7 +34,9 @@ public class InputNilai {
             // set mapel
             model.setMapel(getMapel(nilai));
             // set siswa
-            model.setSiswa(siswaRepository.findById(nilai.getNoInduk()).get());
+            List<Siswa> siswas = siswaRepository.findAll();
+            Siswa siswa = siswaRepository.findById(nilai.getNoInduk());
+            model.setSiswa(siswa);         
             // set nilai
             model.setNilai(nilai.getNilai());
             nilaiRepository.save(model);         
@@ -43,8 +47,9 @@ public class InputNilai {
 
         Mapel mapel = mapelRepository.findByNama(vo.getMapel());
         if(mapel==null){
-            mapel.setNama(vo.getMapel());
-            mapel = mapelRepository.save(mapel);
+            Mapel newMapel = new Mapel();
+            newMapel.setNama(vo.getMapel()); 
+            return mapelRepository.save(newMapel);
         }
 
         return mapel;

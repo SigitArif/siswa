@@ -9,5 +9,6 @@ public class SiswaVO {
 
    private Long id;
    private String nama;
-   private String kelas; 
+   private String kelas;
+
 }
