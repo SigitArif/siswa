@@ -25,6 +25,7 @@ public class NilaiService {
         
         return models.stream().map(model->{
             NilaiDetailVO vo = new NilaiDetailVO();
+            vo.setNama(model.getSiswa().getNama());
             vo.setId(model.getSiswa().getId());
             vo.setMapel(model.getMapel().getNama());
             vo.setNilai(model.getNilai());
