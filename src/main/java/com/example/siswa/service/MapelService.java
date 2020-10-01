@@ -13,4 +13,7 @@ public class MapelService {
     public void clearAllData(){
         mapelRepository.deleteAll();
     }
+    public void delete(String mapel){
+        mapelRepository.delete(mapelRepository.findByNama(mapel));
+    }
 }

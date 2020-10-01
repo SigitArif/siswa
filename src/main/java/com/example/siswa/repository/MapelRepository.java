@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface MapelRepository extends JpaRepository<Mapel, Long>{
  
     Mapel findByNama(String nama);
+    void deleteByNama(String nama);
 }
